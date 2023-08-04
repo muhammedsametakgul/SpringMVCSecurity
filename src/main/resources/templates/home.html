@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Okul Anasayfası</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 5px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        .container {
+            margin: 20px auto;
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>My Schooool</h1>
+</header>
+<nav>
+    <ul>
+        <li><a href="#">Ana Sayfa</a></li>
+        <li><a href="#">Hakkımızda</a></li>
+        <li><a href="#">Eğitim Programları</a></li>
+        <li><a href="#">Dersler</a></li>
+        <li><a href="#">İletişim</a></li>
+        <li><a href="#">Dersler</a></li>
+        <li> <a th:href="@{/teachers}">Teacher Section</a> </li>
+        <li> <a th:href="@{/admin}">Admin Section</a> </li>
+        <li> <form action="#"  th:action="@{/logout}" method="POST" > <input type="submit" value="Logout" /></form> </li>
+
+
+
+
+    </ul>
+</nav>
+<div class="container">
+    <h2>Hoş Geldiniz!</h2>
+    <p>Okulumuz, öğrencilere en iyi eğitimi sunmayı hedefleyen bir kurumdur.</p>
+    <p>Bizimle birlikte başarıya giden yolculuğa çıkın!</p>
+</div>
+</body>
+</html>
