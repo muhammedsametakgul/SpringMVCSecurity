@@ -52,7 +52,11 @@ public class SecurityConfig {
                         .loginProcessingUrl("/authenticateTheUser")
                         .permitAll()
 
-                        ). logout(logout-> logout.permitAll());
+                        ). logout(logout-> logout.permitAll())
+                .exceptionHandling(configurer ->
+                        configurer.accessDeniedPage("/denied")
+                        )
+        ;
         return httpSecurity.build();
     }
 }
