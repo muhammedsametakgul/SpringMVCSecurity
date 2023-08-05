@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"   xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Okul Anasayfası</title>
@@ -50,6 +50,13 @@
         <li><a href="#">Dersler</a></li>
         <li> <a th:href="@{/teachers}">Teacher Section</a> </li>
         <li> <a th:href="@{/admin}">Admin Section</a> </li>
+
+
+
+
+
+
+
         <li> <form action="#"  th:action="@{/logout}" method="POST" > <input type="submit" value="Logout" /></form> </li>
 
 
@@ -61,6 +68,17 @@
     <h2>Hoş Geldiniz!</h2>
     <p>Okulumuz, öğrencilere en iyi eğitimi sunmayı hedefleyen bir kurumdur.</p>
     <p>Bizimle birlikte başarıya giden yolculuğa çıkın!</p>
+
+    <div sec:authorize="hasRole('ADMIN')">
+        <p>ADMINNNN</p>
+
+    </div>
+
+
+    <div sec:authorize="hasRole('TEACHER')">
+        <p>TEACHERS</p>
+
+    </div>
 </div>
 </body>
 </html>
